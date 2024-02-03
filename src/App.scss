@@ -1,0 +1,82 @@
+$dark-bg-color: #1c1f2b;
+$light-bg-color: #2d3042;
+$accent-color: #3498db;
+$delete-color: #e74c3c;
+
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: $dark-bg-color;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.todo-list-container {
+  max-width: 500px;  // Увеличили максимальную ширину
+  width: 100%;      // Добавили 100% ширины
+  background-color: $light-bg-color;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+  label {
+    color: white;
+    margin-bottom: 8px;
+    display: block;
+  }
+
+  input,
+  select,
+  button {
+    width: calc(100% - 20px);  // Увеличили ширину ввода текста
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #777;
+    border-radius: 4px;
+    background-color: $dark-bg-color;
+    color: white;
+
+    &:focus {
+      outline: none;
+      border-color: $accent-color;
+    }
+  }
+
+  button {
+    cursor: pointer;
+    background-color: $accent-color;
+    color: $dark-bg-color;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: darken($accent-color, 10%);
+    }
+  }
+
+  .todo-item {
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: $dark-bg-color;
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    button {
+      background-color: $delete-color;
+      color: $dark-bg-color;
+      border: none;
+      padding: 5px 10px;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: darken($delete-color, 10%);
+      }
+    }
+  }
+}
